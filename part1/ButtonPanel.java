@@ -1,11 +1,12 @@
 package part1;
-
 import part1.app.EvalUtil;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.util.jar.JarEntry;
 
 public class ButtonPanel extends JPanel {
     private static final String[] BUTTONS = {
@@ -17,25 +18,30 @@ public class ButtonPanel extends JPanel {
     };
 
     public ButtonPanel(DisplayPanel display) {
-        setLayout(new GridLayout(5,4,5,5));
+        setLayout(new GridLayout(5, 4, 5, 5));
+        setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        ActionListener listener = e ->{
-            String cmd = ((JButton)e.getSource()).getText();
+        ActionListener listener = e -> {
+            String cmd = ((JButton) e.getSource()).getText();
 
-            if ("=".equals(cmd)){
+            if ("=".equals(cmd)) {
+
                 String expr = display.getExpression();
                 String result = EvalUtil.eval(expr);
                 display.setExpression(result);
-            } else  if ("C".equals(cmd)){
+            } else if ("C".equals(cmd)) {
+
                 display.setExpression("");
             } else if ("b".equals(cmd)){
                 if (display.getExpression().length() > 0){
-                    display.setExpression(display.getExpression().substring(0, display.getExpression().length()-1));
+                    display.setExpression(display.getExpression().substring(0, display.getExpression().length() - 1));
                 }
             } else {
+
                 display.setExpression(display.getExpression() + cmd);
             }
         };
+
 
         for (String label : BUTTONS) {
             JButton button = new JButton(label);
@@ -46,3 +52,4 @@ public class ButtonPanel extends JPanel {
     }
 
 }
+
