@@ -41,4 +41,6 @@ public class ShowPanel extends JPanel {
             g.drawImage(image, x, y, this);
         }
     }
+
+
 }
