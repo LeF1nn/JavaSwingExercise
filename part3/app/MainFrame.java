@@ -1,7 +1,7 @@
-package part3;
+package part3.app;
 
-import part3.app.components.GameBoard;
-import part3.app.components.ScorePanel;
+
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +10,7 @@ public class MainFrame extends JFrame{
     public MainFrame() {
         SwingUtilities.invokeLater(() -> {
 
-            Image img = new ImageIcon(getClass().getResource("../images/frameIcon.png")).getImage();
+            Image img = new ImageIcon(getClass().getResource("../images/frameIcon.png")).getImage(); //?
             setIconImage(img);
             setTitle("Memory Picture Game");
             setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

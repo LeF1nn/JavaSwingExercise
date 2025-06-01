@@ -1,14 +1,12 @@
-package part1;
+package part3.app;
 
-import javax.swing.SwingUtilities;
 
-import part1.app.CalculatorApp;
+import javax.swing.*;
 
 public class Launcher {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-           new CalculatorApp(); 
+            new MainFrame();
         });
     }
-    
 }

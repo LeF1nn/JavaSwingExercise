@@ -1,10 +1,10 @@
-package part3;
+package part3.app;
 
-import javax.swing.*;
-import java.awt.*;
+
+
+
 import java.awt.Dimension;
 import javax.swing.*;
-
 
 public class CardButton extends JButton {
     private final Icon front;
